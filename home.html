@@ -1,0 +1,225 @@
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="connection.js"></script>
+    <script id="temp">
+        $(document).on('click', '.value-control', function () {
+            var action = $(this).attr('data-action')
+            var min = 15
+            var max = 30
+            var target = $(this).attr('data-target')
+            var value = parseFloat($('[id="' + target + '"]').val());
+            if (action == "plus") {
+                if (value < max) {
+                    value++;
+                }
+            }
+            if (action == "minus") {
+                if (value > min) {
+                    value--;
+                }
+            }
+            $('[id="' + target + '"]').val(value)
+        })
+    </script>
+
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 158px;
+            height: 56px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(238, 34, 34);
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 48px;
+            width: 48px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: rgb(136, 255, 0);
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px rgb(136, 255, 0);
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(102px);
+            -ms-transform: translateX(102px);
+            transform: translateX(102px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+
+    <style>
+        #sw {
+            background-image: url("switch2.png");
+            margin-left: -300px;
+            height: 56px;
+            width: 300px;
+        }
+
+        #imgtemp {
+            background-image: url("switch2.png");
+            margin-left: -327px;
+            height: 56px;
+            width: 327px;
+        }
+
+        #scr {
+            position: absolute;
+            right: 50px;
+            bottom: 30%;
+            z-index: 20;
+            font: Agency FB Regular;
+            color: black;
+        }
+
+        #body {
+            background-image: url("cv.jpg");
+        }
+
+        #scritta {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: aliceblue;
+        }
+
+        #scrittat {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-right: 27px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <!--barra-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Progetto Maturità</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a href="home.html">HOME</a>
+                </li>
+                <li>
+                    <a href="rooms.html">ROOMS</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!--bottoni-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div id="sw" class="col-sm-3">
+                <div id="scr">
+                    <p id="scritta">Tutte le Luci</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div id="sw" class="col-sm-3">
+                <div id="scr">
+                    <p id="scritta">Allarme</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <!--bottone-->
+            <div class="col-sm-3">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div id="sw" class="col-sm-3">
+                <div id="scr">
+                    <p id="scritta">Riscaldamento</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <!--temperatura-->
+                <div class="input-group" style="z-index: 30;">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default value-control" data-action="minus" data-min="0" data-target="font-size" style="margin-right: -30 px; bottom: -10px;">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </span>
+                    <input type="text" value="22" class="form-control" id="font-size" style="width: 50px; margin-right: 100px; bottom: -10px;"
+                    />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default value-control" data-action="plus" data-max="9" data-target="font-size" style="margin-left: -220px; bottom: -10px;">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div id="imgtemp" class="col-sm-3">
+                <div id="scr">
+                    <p id="scrittat">Temperatura</p>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
