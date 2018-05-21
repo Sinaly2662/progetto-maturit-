@@ -4,13 +4,14 @@
     <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="connection.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="lib/jquery/3.3.1/jquery.min.js"></script>
+    <script src="lib/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="lib/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="lib/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="lib/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+    <script src="js/connection.js"></script>
     <script id="temp">
         $(document).on('click', '.value-control', function () {
             var action = $(this).attr('data-action')
@@ -32,107 +33,7 @@
         })
     </script>
 
-    <style>
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 158px;
-            height: 56px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .switch input {
-            display: none;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgb(238, 34, 34);
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 48px;
-            width: 48px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        input:checked+.slider {
-            background-color: rgb(136, 255, 0);
-        }
-
-        input:focus+.slider {
-            box-shadow: 0 0 1px rgb(136, 255, 0);
-        }
-
-        input:checked+.slider:before {
-            -webkit-transform: translateX(102px);
-            -ms-transform: translateX(102px);
-            transform: translateX(102px);
-        }
-
-        .slider.round {
-            border-radius: 34px;
-
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
-        }
-    </style>
-
-    <style>
-        #sw {
-            background-image: url("switch2.png");
-            margin-left: -300px;
-            height: 56px;
-            width: 300px;
-        }
-
-        #imgtemp {
-            background-image: url("switch2.png");
-            margin-left: -327px;
-            height: 56px;
-            width: 327px;
-        }
-
-        #scr {
-            position: absolute;
-            right: 50px;
-            bottom: 30%;
-            z-index: 20;
-            font: Agency FB Regular;
-            color: black;
-        }
-
-        #body {
-            background-image: url("cv.jpg");
-        }
-
-        #scritta {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            color: aliceblue;
-        }
-
-        #scrittat {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-right: 27px;
-            color: aliceblue;
-        }
-    </style>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body id="body">

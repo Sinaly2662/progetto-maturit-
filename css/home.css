@@ -1,0 +1,99 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 158px;
+    height: 56px;
+    position: relative;
+    z-index: 10;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(238, 34, 34);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 48px;
+    width: 48px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: rgb(136, 255, 0);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px rgb(136, 255, 0);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(102px);
+    -ms-transform: translateX(102px);
+    transform: translateX(102px);
+}
+
+.slider.round {
+    border-radius: 34px;
+
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+</style>
+
+<style>
+#sw {
+    background-image: url("switch2.png");
+    margin-left: -300px;
+    height: 56px;
+    width: 300px;
+}
+
+#imgtemp {
+    background-image: url("switch2.png");
+    margin-left: -327px;
+    height: 56px;
+    width: 327px;
+}
+
+#scr {
+    position: absolute;
+    right: 50px;
+    bottom: 30%;
+    z-index: 20;
+    font: Agency FB Regular;
+    color: black;
+}
+
+#body {
+    background-image: url("cv.jpg");
+}
+
+#scritta {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
+}
+
+#scrittat {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: 27px;
+    color: aliceblue;
+}
